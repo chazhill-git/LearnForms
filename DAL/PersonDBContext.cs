@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DAL
 {
-    class PersonDBContext : DbContext
+    public class PersonDBContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -14,6 +14,11 @@ namespace DAL
         }
         public DbSet<Models.Person> People { get; set; }
         public DbSet<Models.SupportTickets.TicketTypes> TicketTypes {get; set;}
+
+        public DbSet<Models.Item> Items { get; set; }
+        public DbSet<Models.Supplier> Suppliers { get; set; }
+        public DbSet<Models.SupplierList> SupplierLists { get; set; }
+
     }
 }
 
